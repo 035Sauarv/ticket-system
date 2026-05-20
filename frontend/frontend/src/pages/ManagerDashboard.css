@@ -1,0 +1,185 @@
+/* ===========================
+MANAGER DASHBOARD CSS
+ManagerDashboard.css
+=========================== */
+
+.manager-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.manager-sidebar {
+    width: 250px;
+    background: #111827;
+    color: white;
+    padding: 30px 20px;
+}
+
+.manager-logo {
+    margin-bottom: 40px;
+}
+
+.manager-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.manager-sidebar li {
+    padding: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.manager-sidebar li:hover {
+    background: #2563eb;
+}
+
+.manager-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.manager-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.manager-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.manager-card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.table-box {
+    margin-top: 25px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 350px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.add-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+table th,
+table td {
+    border: 2px solid black;
+    padding: 14px;
+    text-align: left;
+}
+
+table th {
+    background: #f3f4f6;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+.approve-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.reject-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+.modal-box input,
+.modal-box textarea,
+.modal-box select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.clickable:hover {
+    transform: translateY(-4px);
+    background: #f8fafc;
+}
