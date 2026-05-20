@@ -1,0 +1,58 @@
+services:
+
+  frontend:
+    build: ./frontend/frontend
+    container_name: ticket-frontend
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - backend
+
+  backend:
+    build: ./app
+    container_name: ticket-backend
+
+    ports:
+      - "8000:8000"
+    
+    volumes:
+      - ./app:/code/app
+      - ./app/uploads:/code/app/uploads
+
+    depends_on:
+      - mysql
+
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+
+  mysql:
+    image: mysql:8.0
+    container_name: ticket-mysql
+
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+
+    ports:
+      - "${MYSQL_PORT}:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  nginx:
+    image: nginx:latest
+    container_name: ticket-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  mysql_data:
